@@ -1,0 +1,13 @@
+/************
+index sass
+************/
+@use'./partials/reset' as *;
+@use'./partials/typography' as *;
+@use'./partials/common' as *;
+@use'./partials/mixing' as *;
+@use'./partials/utils' as *;
+@use'./partials/variables' as *;
+
+body{
+    background-color: $body-bg-color;    
+}
