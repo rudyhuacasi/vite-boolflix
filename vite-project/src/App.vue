@@ -56,7 +56,17 @@
                     <div class="col-3 bg-primary margin" v-for="movie in store.movies">
                         <h3><strong>Title:</strong>  {{ movie.title }}</h3>
                         <p><strong>Riepilogo:</strong>  {{ movie.overview }}</p>
+                        <p v-if="movie.original_language === 'it'  ">
+                          <strong>Lingua:</strong> bandiera <img class="ima" :src="ita" alt="italia">
+                        </p>
+                        <p v-else-if="movie.original_language === 'en'">
+                          <strong>Lingua:</strong> bandiera <img class="ima" :src="en" alt="english">
+                        </p>
+                        <p v-else><strong>Lingua:</strong> {{ movie.original_language }}</p>
+                        <p><strong>Voto:</strong> {{ movie.vote_average }} </p>
                         
+
+                          <img :src="imma + misura +movie.poster_path" alt="">
                     </div>
                 </div>
              </div>
