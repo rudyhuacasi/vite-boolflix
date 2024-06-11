@@ -15,6 +15,9 @@
     };
   },
   methods: {
+    getVote(vote){
+      return Math.ceil(vote / 2);
+    },
     searchMovies() {
     console.log('ho cliccato sul bottone');
 
@@ -63,15 +66,14 @@
                           <strong>Lingua:</strong> bandiera <img class="ima" :src="en" alt="english">
                         </p>
                         <p v-else><strong>Lingua:</strong> {{ movie.original_language }}</p>
-                        <p><strong>Voto:</strong> {{ movie.vote_average }} </p>
-                        
-
-                          <img :src="imma + misura +movie.poster_path" alt="">
+                        <p><strong>Voto Stelle:</strong> {{ getVote(movie.vote_average) }}</p>
+                        <i v-for="n in getVote(movie.vote_average)" class="fa-solid fa-star" ></i>
+                        <i class="fa-regular fa-star" v-for="n in starNumber - getVote(movie.vote_average)"></i>
+                        <img :src="imma + misura + movie.poster_path" alt="">
                     </div>
                 </div>
              </div>
-         </div>
-        
+         </div> 
     </main>
 </template> 
 <style>
