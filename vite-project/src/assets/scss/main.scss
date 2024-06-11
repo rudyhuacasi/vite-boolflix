@@ -1,6 +1,8 @@
 /************
 index sass
 ************/
+// Import all of Bootstrap's CSS
+@use "bootstrap/scss/bootstrap";
 @use'./partials/reset' as *;
 @use'./partials/typography' as *;
 @use'./partials/common' as *;
@@ -8,6 +10,4 @@ index sass
 @use'./partials/utils' as *;
 @use'./partials/variables' as *;
 
-body{
-    background-color: $body-bg-color;    
-}
+@import'@fortawesome/fontawesome-free/css/all.min.css';
